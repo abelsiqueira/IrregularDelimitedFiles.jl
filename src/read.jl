@@ -14,9 +14,9 @@ Read an irregular file like the one below:
 and returns three equal-sized arrays with this information such that they can be used to create a table.
 For instance, for the file above, it would return:
 
-- keys    = [   1, 271, 271, 271, 271, 403, 403]
-- indexes = [   0,   0,   1,   2,   3,   0,   1]
-- values  = [1024,  31,  32,  33, 301,  99, 105]
+- `keys    = [   1, 271, 271, 271, 271, 403, 403]`
+- `indexes = [   0,   0,   1,   2,   3,   0,   1]`
+- `values  = [1024,  31,  32,  33, 301,  99, 105]`
 
 ## Input
 - `filename`: File name.
