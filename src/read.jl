@@ -1,7 +1,7 @@
 export read_irregular
 
 """
-    read_irregular(filename; options...)
+    keys, arrays, values = read_irregular(filename; options...)
 
 Read an irregular file like the one below:
 
@@ -11,11 +11,26 @@ Read an irregular file like the one below:
 403#99,105
 ```
 
+and returns three equal-sized arrays with this information such that they can be used to create a table.
+For instance, for the file above, it would return:
+
+- keys    = [   1, 271, 271, 271, 271, 403, 403]
+- indexes = [   0,   0,   1,   2,   3,   0,   1]
+- values  = [1024,  31,  32,  33, 301,  99, 105]
+
+## Input
+- `filename`: File name.
+- `key_sep::Char = '#'`: Character separating the key from the values.
+- `array_sep::Char = ','`: Character separating values.
+
+## Output
+Vectors `keys::Vector{Int}`, `indexes::Vector{Int}` and `values::Vector{Int}` such that a table provides the same information.
+See the example above.
 """
 function read_irregular(
   filename;
-  key_sep = '#',
-  array_sep = ',',
+  key_sep::Char = '#',
+  array_sep::Char = ',',
 )
   # Read the file as bytes
   file = read(filename)
