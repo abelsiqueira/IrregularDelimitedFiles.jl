@@ -1,5 +1,7 @@
 module IrregularDelimitedFiles
 
-# Write your package code here.
+using Parsers
+
+include("read.jl")
 
 end
