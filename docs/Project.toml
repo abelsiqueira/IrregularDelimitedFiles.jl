@@ -1,0 +1,3 @@
+[deps]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+IrregularDelimitedFiles = "49c2a1e4-4248-42d5-ba11-d61d1cad7a0c"
