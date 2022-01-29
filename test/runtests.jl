@@ -28,7 +28,9 @@ end
 end
 
 @testset "Increase coverage of gen_data" begin
+  filename = mktemp()[1]
   for dist in [:uniform, :exponential]
-    gen_data(mktemp()[1], value_distribution_type=dist)
+    gen_data(filename, value_distribution_type=dist)
   end
+  gen_data(filename, value_range=1:50, num_rows=50)
 end
