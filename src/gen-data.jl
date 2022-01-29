@@ -36,10 +36,9 @@ function gen_data(
     keys = sort(rand(value_range, num_rows))
     while !allunique(keys)
       keys = unique(keys)
-      keys = sort([keys; rand(1:100_000, num_rows - length(keys))])
+      keys = sort([keys; rand(value_range, num_rows - length(keys))])
     end
     for key in keys
-      key = rand(value_range)
       print(io, key)
       print(io, key_sep)
       num_values = if value_distribution_type == :uniform

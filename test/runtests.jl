@@ -33,4 +33,6 @@ end
     gen_data(filename, value_distribution_type=dist)
   end
   gen_data(filename, value_range=1:50, num_rows=50)
+  dict = read_as_dict(filename)
+  @test sort([keys(dict)...]) == 1:50
 end
